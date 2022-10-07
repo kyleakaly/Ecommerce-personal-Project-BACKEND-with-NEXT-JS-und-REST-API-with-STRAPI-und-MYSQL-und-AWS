@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "productos",
+  "info": {
+    "singularName": "producto",
+    "pluralName": "productos",
+    "displayName": "producto",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "modolectura": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::modolectura.modolectura"
+    },
+    "precio": {
+      "type": "decimal",
+      "required": true
+    },
+    "descuento": {
+      "type": "integer"
+    },
+    "poster": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "url": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "descripcion": {
+      "type": "text",
+      "required": true
+    },
+    "galerias": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "fechadelanzamiento": {
+      "type": "date",
+      "required": true
+    },
+    "video": {
+      "type": "string"
+    }
+  }
+}
